@@ -1,0 +1,50 @@
+[
+  {
+    "id": "typewriter_1868",
+    "question": "Who patented the typewriter in 1868, and what advantage did it provide over handwriting?",
+    "reference_answer": "Christopher Latham Sholes patented the typewriter in 1868. It enabled people to produce legible, professional documents more efficiently than handwriting.",
+    "relevant_children": [
+      {
+        "page_number": 1,
+        "parent_index": 2,
+        "child_index": 1
+      }
+    ]
+  },
+  {
+    "id": "ibm_mt_st",
+    "question": "How did the IBM MT/ST improve word processing compared with traditional typewriters?",
+    "reference_answer": "The IBM MT/ST combined an IBM Selectric typewriter with magnetic tape storage, allowing users to record, edit, and replay typed content and make revisions without retyping entire documents.",
+    "relevant_children": [
+      {
+        "page_number": 1,
+        "parent_index": 3,
+        "child_index": 1
+      }
+    ]
+  },
+  {
+    "id": "wordstar_vs_microsoft_word",
+    "question": "How did WordStar and Microsoft Word contribute differently to the rise of word processing on personal computers?",
+    "reference_answer": "WordStar, developed for CP/M in 1978, was one of the first widely used word processing programs and introduced early examples of features such as cut, copy, and paste. Microsoft Word, launched for MS-DOS in 1983, introduced a graphical user interface and mouse support and later became the industry standard for word processing.",
+    "relevant_children": [
+      {
+        "page_number": 1,
+        "parent_index": 4,
+        "child_index": 1
+      }
+    ]
+  },
+  {
+    "id": "word_processing_features",
+    "question": "What major features changed how people edited and collaborated on documents from the 1980s onward?",
+    "reference_answer": "Major features included Undo and Redo for easier experimentation and error correction, Spell Check and Grammar Check for automatically detecting errors, Templates for reusable document formats, Track Changes for collaborative editing while preserving the original text, and Real-Time Collaboration for multiple users to edit the same document simultaneously.",
+    "relevant_children": [
+      {
+        "page_number": 3,
+        "parent_index": 8,
+        "child_index": 1
+      }
+    ]
+  }
+]
