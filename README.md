@@ -48,18 +48,18 @@ the current workload does not require.
 
 <p align="left">
 
-<img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python" />{=html}
-<img src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white" alt="FastAPI" />{=html}
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL" />{=html}
-<img src="https://img.shields.io/badge/pgvector-4169E1?logo=postgresql&logoColor=white" alt="pgvector" />{=html}
-<img src="https://img.shields.io/badge/SQLAlchemy-D71F00?logo=sqlalchemy&logoColor=white" alt="SQLAlchemy" />{=html}
-<img src="https://img.shields.io/badge/Alembic-6BA81E?logoColor=white" alt="Alembic" />{=html}
-<img src="https://img.shields.io/badge/Celery-37814A?logo=celery&logoColor=white" alt="Celery" />{=html}
-<img src="https://img.shields.io/badge/Redis-FF4438?logo=redis&logoColor=white" alt="Redis" />{=html}
-<img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" alt="Docker" />{=html}
-<img src="https://img.shields.io/badge/Docling-1F6FEB?logoColor=white" alt="Docling" />{=html}
-<img src="https://img.shields.io/badge/SentenceTransformers-FFD21E?logo=huggingface&logoColor=black" alt="Sentence Transformers" />{=html}
-<img src="https://img.shields.io/badge/ONNX_Runtime-005CED?logo=onnx&logoColor=white" alt="ONNX Runtime" />{=html}
+<img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python" />
+<img src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white" alt="FastAPI" />
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL" />
+<img src="https://img.shields.io/badge/pgvector-4169E1?logo=postgresql&logoColor=white" alt="pgvector" />
+<img src="https://img.shields.io/badge/SQLAlchemy-D71F00?logo=sqlalchemy&logoColor=white" alt="SQLAlchemy" />
+<img src="https://img.shields.io/badge/Alembic-6BA81E?logoColor=white" alt="Alembic" />
+<img src="https://img.shields.io/badge/Celery-37814A?logo=celery&logoColor=white" alt="Celery" />
+<img src="https://img.shields.io/badge/Redis-FF4438?logo=redis&logoColor=white" alt="Redis" />
+<img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" alt="Docker" />
+<img src="https://img.shields.io/badge/Docling-1F6FEB?logoColor=white" alt="Docling" />
+<img src="https://img.shields.io/badge/SentenceTransformers-FFD21E?logo=huggingface&logoColor=black" alt="Sentence Transformers" />
+<img src="https://img.shields.io/badge/ONNX_Runtime-005CED?logo=onnx&logoColor=white" alt="ONNX Runtime" />
 
 </p>
 
@@ -214,17 +214,23 @@ guarantees.
 
 ### 1. Clone the repository
 
-git clone <your-repository-url>
-cd <repository-name>
+```bash
+git clone https://github.com/imLeo007/groundforge-rag
+cd groundforge-rag
+```
 
 ### 2. Configure the environment
 
+```
 Create a .env file with the database configuration and model/API
 credentials expected by the application.
+```
 
 ### 3. Build and start the services
 
+```bash
 docker compose up --build
+```
 
 This starts FastAPI, PostgreSQL + pgvector, Redis, and the Celery
 worker. The first startup can take around 30 seconds while Docling and
@@ -232,11 +238,15 @@ the CrossEncoder initialize.
 
 ### 4. Run database migrations
 
+```bash
 docker compose exec api alembic upgrade head
+```
 
 ### 5. Open Swagger UI
 
+```
 http://localhost:<PORT>/docs
+```
 
 ### 6. Upload a document
 
