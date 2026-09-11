@@ -80,8 +80,12 @@ Document ingestion is dispatched through Celery with Redis as
 the broker. Parsing, chunking, embedding generation, and database
 storage run in the worker instead of blocking the FastAPI request path.
 
-queued → processing → ready
-                    ↘ failed
+```mermaid
+flowchart LR
+    A[Queued] --> B[Processing]
+    B --> C[Ready]
+    B --> D[Failed]
+```
 
 Temporary uploaded files are cleaned up by the worker after processing.
 
@@ -138,7 +142,7 @@ impressions.
 
 ## Workflow
 
-![Production RAG Pipeline](screenshots/v17_workflow.png)
+![Production RAG Pipeline](screenshots/groundforge.png)
 
 The workflow separates background ingestion from the question-answering
 path. Documents are prepared asynchronously, while retrieval and
@@ -165,12 +169,11 @@ interactive API interface.
 The final pipeline was optimized around bottlenecks observed during
 development rather than theoretical high-scale traffic.
 
-Operation             Earlier implementations          Current pipeline
-
-Question answering                   20--30 s               below 5 s
-approximately
-
-Application startup                       2 m                ~30 s
+| Operation | Earlier implementations | Current pipeline |
+| --- | ---: | ---: |
+| Question answering | 20–30 s | **below 5 s approximately** |
+| Application startup | ~2 min | **~30 s** |
+| Background document processing | request-bound | **~3 s per document** |
 
 ### Startup
 
@@ -183,13 +186,12 @@ initializes Docling.
 A document takes approximately 3 seconds to complete the background
 ingestion path:
 
-Docling parsing
-    ↓
-chunking
-    ↓
-embedding generation
-    ↓
-database storage
+```mermaid
+flowchart LR
+    A[Docling parsing] --> B[Chunking]
+    B --> C[Embedding generation]
+    C --> D[Database storage]
+```
 
 Because this work runs through Celery, the API does not keep the upload
 request waiting for the full ingestion pipeline.
