@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     embedding_dimension: int
 
     rerank_candidate_k: int
+    reranker_model_name: str
 
     gemini_api_key: str
     gemini_model: str
